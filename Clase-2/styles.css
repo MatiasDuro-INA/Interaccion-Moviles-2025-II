@@ -87,7 +87,6 @@ a{
     max-width: 320px;
     background: #fff;
     border-left: 1px solid #e5e7eb;
-    pad: 16px;
     transform: translateX(100%);
     transition: transform .25 ease;
     padding: 16px;
