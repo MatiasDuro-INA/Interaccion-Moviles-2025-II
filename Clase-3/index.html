@@ -4,8 +4,197 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    
-</body>
-</html>
+    <div class="container">
+      <h1>Clase 3 — Demos CSS (de menor a mayor dificultad)</h1>
+  
+      <!-- ===================================================== -->
+      <!-- 1) Sistema de botones con variables                  -->
+      <!-- ===================================================== -->
+      <!-- Mensaje: “Con pocas variables mantengo consistencia de UI.” -->
+      <section class="demo demo-buttons">
+        <h2>1) Botones con variables</h2>
+        <p class="code-hint">Base única (.btn) + variantes con --primary / --secondary / ghost.</p>
+        <div class="row">
+          <a class="btn btn--primary" href="#">Primario</a>
+          <a class="btn btn--secondary" href="#">Secundario</a>
+          <a class="btn btn--ghost" href="#">Ghost</a>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 2) Flexbox básico                                    -->
+      <!-- ===================================================== -->
+      <!-- Mensaje: “Alineo en fila, centro vertical y separo con gap.” -->
+      <section class="demo demo-flex">
+        <h2>2) Flexbox: alineación y gap</h2>
+        <p class="code-hint">display:flex; align-items:center; gap:10px;</p>
+        <div class="row">
+          <span class="pill">Home</span>
+          <span class="pill">Ofertas</span>
+          <span class="pill">Login</span>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 3) Background gradient + 3 proporciones              -->
+      <!-- ===================================================== -->
+      <!-- Mensaje: “Uso gradientes como media y muestro aspect-ratio 1:1, 4:3, 16:9.” -->
+      <section class="demo demo-gradients">
+        <h2>3) Gradients de fondo + proporciones</h2>
+        <p class="code-hint">aspect-ratio + linear-gradient en la “media” de cada card.</p>
+        <div class="cards">
+          <article class="card">
+            <div class="card__media card__media--square" aria-hidden="true"></div>
+            <div class="card__body">
+              <strong>Card cuadrada (1:1)</strong>
+              <span class="code-hint">background: linear-gradient(…)</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media card__media--fourthree" aria-hidden="true"></div>
+            <div class="card__body">
+              <strong>Card 4:3</strong>
+              <span class="code-hint">aspect-ratio: 4 / 3;</span>
+            </div>
+          </article>
+          <article class="card">
+            <div class="card__media card__media--sixteennine" aria-hidden="true"></div>
+            <div class="card__body">
+              <strong>Card 16:9</strong>
+              <span class="code-hint">aspect-ratio: 16 / 9;</span>
+            </div>
+          </article>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 4) Grid responsive (auto-fit + minmax)               -->
+      <!-- ===================================================== -->
+      <section class="demo demo-grid">
+        <h2>4) Grid responsive</h2>
+        <p class="code-hint">repeat(auto-fit, minmax(160px, 1fr))</p>
+        <div class="grid">
+          <div class="box">Card A</div>
+          <div class="box">Card B</div>
+          <div class="box">Card C</div>
+          <div class="box">Card D</div>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 5) :focus-visible                                    -->
+      <!-- ===================================================== -->
+      <section class="demo demo-focus">
+        <h2>5) :focus-visible (accesibilidad)</h2>
+        <p class="code-hint">Solo aparece con Tab; no molesta con click.</p>
+        <a href="#" class="btn btn--primary">Botón accesible</a>
+
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 6) :nth-child / first-child / last-child             -->
+      <!-- ===================================================== -->
+      <!-- Mensaje: “Selecciono elementos por posición sin tocar el HTML.” -->
+      <section class="demo demo-nth">
+        <h2>6) :nth-child + first/last-child</h2>
+        <p class="code-hint">odd/even + estilos para el primero y el último.</p>
+        <li class="stack">
+          <ol class="item">Item 1 (first-child)</ol>
+          <ol class="item">Item 2</ol>
+          <ol class="item">Item 3</ol>
+          <ol class="item">Item 4</ol>
+          <ol class="item">Item 5</ol>
+          <ol class="item">Item 6</ol>
+          <ol class="item">Item 7</ol>
+          <ol class="item">Item 8 (last-child)</ol>
+        </li>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 7) position: sticky                                  -->
+      <!-- ===================================================== -->
+      <section class="demo demo-sticky">
+        <h2>7) position: sticky</h2>
+        <p class="code-hint">Subheader “pegado” dentro de un panel con scroll.</p>
+        <div class="panel">
+          <div class="subheader">Filtros</div>
+          <div class="item">Wifi</div>
+          <div class="item">Pet-friendly</div>
+          <div class="item">Cocina</div>
+          <div class="item">Vista al río</div>
+          <div class="item">Estacionamiento</div>
+          <div class="item">Balcón</div>
+          <div class="item">Piscina</div>
+          <div class="item">Wifi</div>
+          <div class="item">Pet-friendly</div>
+          <div class="item">Cocina</div>
+          <div class="item">Vista al río</div>
+          <div class="item">Estacionamiento</div>
+          <div class="item">Balcón</div>
+          <div class="item">Piscina</div>
+          <div class="item">Wifi</div>
+          <div class="item">Pet-friendly</div>
+          <div class="item">Cocina</div>
+          <div class="item">Vista al río</div>
+          <div class="item">Estacionamiento</div>
+          <div class="item">Balcón</div>
+          <div class="item">Piscina</div>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 8) clamp()                                           -->
+      <!-- ===================================================== -->
+      <section class="demo demo-clamp">
+        <h2 class="title">8) clamp() para tamaños fluidos</h2>
+        <p class="code-hint">clamp(min, ideal, max) para tipografía/espacios.</p>
+        <a href="#" class="cta">Reservar ahora</a>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 9) Scroll Snap                                       -->
+      <!-- ===================================================== -->
+      <section class="demo demo-snap">
+        <h2>9) Scroll Snap (carrusel sin JS)</h2>
+        <p class="code-hint">scroll-snap-type:x; scroll-snap-align:start</p>
+        <div class="rail" aria-label="Propiedades destacadas">
+          <div class="card">Card 1 — Palermo</div>
+          <div class="card">Card 2 — Recoleta</div>
+          <div class="card">Card 3 — Belgrano</div>
+          <div class="card">Card 4 — Núñez</div>
+        </div>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 10) Transiciones vs Animaciones                      -->
+      <!-- ===================================================== -->
+      <!-- Mensaje: “transition” reacciona a una interacción; “animation” corre sola. -->
+      <section class="demo demo-anim">
+        <h2>10) Transiciones y Animaciones</h2>
+        <p class="code-hint">Cubic-bezier para suavidad + @keyframes para efectos cíclicos.</p>
+        <div class="card" tabindex="0">
+          <strong>Transición en card</strong>
+          <p class="code-hint">hover / focus-within → translate + scale + shadow</p>
+        </div>
+        <span class="chip">Chip animado</span>
+      </section>
+  
+      <!-- ===================================================== -->
+      <!-- 11) Media queries (mobile-first)                     -->
+      <!-- ===================================================== -->
+      <section class="demo demo-mq">
+        <h2>11) Media queries (≥768px)</h2>
+        <p class="code-hint">Base mobile + mejoras cuando hay más ancho.</p>
+        <div class="bar">
+          <div class="box" style="background:#eef2ff;border:1px dashed #c7d2fe;padding:10px;border-radius:10px;">Texto principal</div>
+          <span class="badge">Estado</span>
+        </div>
+      </section>
+
+    </div>
+  </body>
+  </html>
+  
