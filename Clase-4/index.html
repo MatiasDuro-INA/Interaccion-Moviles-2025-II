@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4</title>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+
+    <section class="demo demo-units">
+        <h2>1) Unidades CSS</h2>
+        <p class="explain">
+          Las unidades definen cómo se calculan tamaños y espacios. Es clave elegir bien según el contexto (fijo, relativo al root, al padre, al contenedor o al viewport).
+        </p>
+        <div class="units-grid">
+          <div class="unit-card">
+            <h3>px (absoluto)</h3>
+            <div class="box px-demo">100px</div>
+            <p class="muted">Medida fija. Útil para bordes o íconos exactos, pero no es flexible.</p>
+          </div>
+          <div class="unit-card">
+            <h3>rem (root em)</h3>
+            <p>rem (root em)</p>
+            <div class="box rem-demo">6rem</div>
+            <p class="muted">Relativo al <code>font-size</code> del &lt;html&gt;. Escala todo el sitio si se cambia ese valor.</p>
+          </div>
+          <div class="unit-card">
+            <h3>em (padre)</h3>
+            <div class="parent-em">
+              <div class="box em-demo">6em</div>
+            </div>
+            <p class="muted">Relativo al tamaño de fuente del padre. Puede acumularse al anidar.</p>
+          </div>
+          <div class="unit-card">
+            <h3>% (contenedor)</h3>
+            <div class="percent-wrap">
+              <div class="box percent-demo">60%</div>
+            </div>
+            <p class="muted">Se calcula respecto al tamaño del contenedor inmediato.</p>
+          </div>
+          <div class="unit-card">
+            <h3>vw/vh (viewport)</h3>
+            <div class="box vh-demo">20vh</div>
+            <div class="box dvh-demo">20dvh</div>
+            <p class="muted">En mobile: <b>dvh</b> y <b>svh</b> corrigen el “salto” de altura cuando aparecen/ocultan las barras del navegador.</p>
+          </div>
+        </div>
+        <ul class="tip">
+          <li><b>rem</b> para tipografía y espacios globales.</li>
+          <li><b>em</b> para tamaños internos de componentes.</li>
+          <li><b>%</b> para layouts fluidos dentro de un padre.</li>
+          <li><b>dvh</b> en pantallas completas para evitar saltos en mobile.</li>
+        </ul>
+      </section>
+
+
+      <section class="demo demo-safe">
+        <h2>3) Safe-area</h2>
+        <p class="explain">
+          En dispositivos con notch o gestos, los elementos fijos pueden quedar tapados.
+          <code>env(safe-area-inset-*)</code> agrega espacio dinámico para evitarlo.
+        </p>
+        <div style="height:120px"></div>
+        <div class="bottom-bar">
+          <span>Botón fijo</span>
+          <a class="btn btn--primary" href="#">Reservar</a>
+        </div>
+        <p class="tip"> Se usa en headers, footers y barras flotantes para garantizar usabilidad en iOS/Android modernos.</p>
+      </section>
+
+      <section class="demo demo-has">
+        <h2>4) :has()</h2>
+        <p class="explain">
+          Permite seleccionar un elemento <b>padre</b> en función de sus <b>hijos</b>.  
+          Es como tener “selectores hacia arriba” sin JavaScript.
+        </p>
+        <label class="card-has">
+          <input type="checkbox" />
+          <div class="info">
+            <strong>Seleccionar</strong>
+            <span class="muted">La card se resalta si el input está checked</span>
+          </div>
+        </label>
+  
+        <div class="field">
+          <label>Email</label>
+          <input type="email" placeholder="tu@email.com" />
+          <small class="muted">La field se resalta si el input tiene foco</small>
+        </div>
+        <div class="field">
+            <label>user</label>
+            <input type="user" placeholder="tu@user.com" />
+            <small class="muted">La field se resalta si el input tiene foco</small>
+          </div>
+        <div class="field">
+            <label>password</label>
+            <input type="password" placeholder="tu@password.com" />
+            <small class="muted">La field se resalta si el input tiene foco</small>
+          </div>
+
+      </section>
+              
+    </div>
+</body>
+</html>
