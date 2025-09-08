@@ -25,7 +25,6 @@
     line-height: 1.5;
   }
   
-  /* HERO */
   .hero {
     /* background: linear-gradient(135deg, var(--primary), var(--secondary)); */
   }
@@ -51,7 +50,6 @@
   }
 
   
-  /* Wave decorativa */
   .hero-wave {
     position: absolute;
     bottom: 0;
@@ -63,14 +61,12 @@
     border-top-right-radius: 100% 40px;
   }
   
-  /* CONTENEDOR */
   .container {
     flex: 1; /* ocupa espacio disponible antes del footer */
     width: 100%;
     padding: 20px;
   }
   
-  /* MENÚ */
   .menu h2 {
     font-size: 1.2rem;
     margin-bottom: 12px;
@@ -101,7 +97,6 @@
     font-size: 0.95rem;
   }
   
-  /* FOOTER */
   .footer {
     margin-top: auto;
     background: #fff;
