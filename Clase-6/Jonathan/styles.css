@@ -180,6 +180,23 @@ body {
   text-decoration: none; color: var(--text);
   font-weight: 600; padding: 10px 12px; border-radius: 10px;
 }
+
+.nav-list li:first-child a {
+  border: 2px dashed var(--primary);
+  border-radius: 8px;
+}
+.nav-list li:nth-child(3) a {
+  color: green;
+}
+.nav-list li:nth-child(5) a {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+
+}
+.nav-list li:last-child a {
+  background: var(--primary);
+  color: #fff;
+}
 .nav-list a:focus-visible{ outline: 2px solid var(--primary); outline-offset: 2px; }
 
 @media (min-width: 768px){
@@ -189,28 +206,4 @@ body {
     gap: 8px; padding: 0; background: transparent; border: 0; box-shadow: none;
   }
   .nav-list a{ width: auto; }
-}
-
-
-
-
-
-.nav-list li:first-child > a{
-  border: 2px dashed var(--primary);
-}
-
-.nav-list li:last-child > a{
-  background: var(--primary); color: #fff;
-}
-
-.nav-list li:nth-child(3) > a{
-  color: rgb(13, 171, 13);
-}
-
-.nav-list li:nth-child(5) > a{                 
-  border: 2px solid var(--primary);
-  background: transparent; color: var(--primary);
-}
-.nav-list li:nth-child(6) > a{                 
-  background: var(--primary); color: #fff;
 }
