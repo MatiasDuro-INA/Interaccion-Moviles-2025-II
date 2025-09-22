@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mini App</title>
   <link rel="stylesheet" href="./styles.css">
 </head>
+
 <body>
   <header class="hero">
     <nav class="navbar" aria-label="Navegación principal">
       <a href="#" class="brand" aria-label="Inicio">INA</a>
-    
+
       <button class="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú">
         <span class="sr-only">Abrir menú</span>
         <!-- ícono hamburguesa -->
         <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-          <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
         </svg>
       </button>
-    
+
       <ul id="primary-menu" class="nav-list">
-        <li><a href="#">Comprar</a></li>         
+        <li><a href="#">Comprar</a></li>
         <li><a href="#">Alquilar</a></li>
-        <li><a href="#">Servicios</a></li>        
+        <li><a href="#">Servicios</a></li>
         <li><a href="#">Inmobiliarias</a></li>
-        <li><a href="#">Ingresar</a></li>         
-        <li><a href="#">Registrarte</a></li>  
+        <li><a href="#">Ingresar</a></li>
+        <li><a href="#">Registrarte</a></li>
       </ul>
     </nav>
-    
+
     <div class="hero-content">
       <h1>Encuentra tu próximo hogar</h1>
       <p>Explora ofertas exclusivas de alquiler y venta</p>
+
       <a href="#" class="btn btn--primary">Comenzar</a>
     </div>
     <div class="hero-wave" aria-hidden="true"></div>
@@ -72,7 +75,7 @@
       const navbar = document.querySelector('.navbar');
       const toggle = navbar.querySelector('.nav-toggle');
       const menu = navbar.querySelector('#primary-menu');
-  
+
       function closeMenu() {
         navbar.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
@@ -81,20 +84,20 @@
         navbar.classList.add('open');
         toggle.setAttribute('aria-expanded', 'true');
       }
-  
+
       toggle.addEventListener('click', () => {
         const isOpen = navbar.classList.toggle('open');
         toggle.setAttribute('aria-expanded', String(isOpen));
       });
-  
+
       document.addEventListener('click', (e) => {
         if (!navbar.contains(e.target)) closeMenu();
       });
-  
+
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeMenu();
       });
-  
+
       // Cerrar al navegar (enter/click en un link)
       menu.addEventListener('click', (e) => {
         const el = e.target.closest('a');
@@ -102,6 +105,7 @@
       });
     })();
   </script>
-  
+
 </body>
+
 </html>
