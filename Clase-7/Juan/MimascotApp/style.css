@@ -1,0 +1,327 @@
+:root {
+    --color-primary: #FF7B54;
+    --color-secondary: #FFD495;
+    --color-text: #2c3e50;
+    --color-background: #f9f9f9;
+    --color-white: #ffffff;
+    --font-family-title: 'Montserrat', sans-serif;
+    --font-family-body: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+
+body {
+    font-family: var(--font-family-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* centrar el contenido */
+.container {
+    width: 90%;
+    max-width: 450px;
+    margin: 0 auto;
+    padding: 1.5rem 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: var(--color-white);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-family: var(--font-family-title);
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.header .nav-link {
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.header .nav-link:hover,
+.header .nav-link:focus {
+    background-color: var(--color-secondary);
+}
+
+
+
+.main {
+    flex-grow: 1;
+}
+
+
+
+
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    position: relative;
+    padding: 3rem 1rem 0.1rem;
+    color: var(--color-white);
+    text-align: center;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 40dvh;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    /* Estilos del usuario */
+    padding: 60px 20px 80px;
+    text-align: center;
+}
+
+.hero-title {
+    /* Estilos del usuario */
+    font-size: 2rem;
+    color: #fff;
+    margin: 0 0 10px;
+}
+
+.hero-subtitle {
+    /* Estilos del usuario */
+    font-size: 0.8rem;
+    opacity: 0.9;
+    color: #fff;
+    margin: 0 0 20px;
+}
+
+.hero-button {
+    display: inline-block;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero-button:hover,
+.hero-button:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* acciones con grid */
+.actions-section h2 {
+    font-family: var(--font-family-title);
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.actions-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 0.5rem auto 0;
+    border-radius: 1rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    padding: 0 1rem;
+}
+
+.card {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: var(--color-text);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover,
+.card:focus {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+}
+
+
+.card:hover .card-icon,
+.card:focus .card-icon {
+    color: var(--color-secondary);
+}
+
+.card h3 {
+    font-family: var(--font-family-title);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+
+
+
+.footer {
+    background-color: var(--color-text);
+    color: var(--color-white);
+    padding: 2rem 1rem;
+    text-align: center;
+    margin-top: auto;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-links a {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+    opacity: 1;
+}
+
+/* menu hambur */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    background: #fff;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+.navbar .brand {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--text);
+    letter-spacing: 0.3px;
+}
+
+.nav-toggle {
+    appearance: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.nav-toggle:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 12px;
+    display: none;
+    position: absolute;
+    right: 16px;
+    top: 56px;
+    min-width: 240px;
+    background: #fff;
+    border: 1px solid #d6d6d6;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .07);
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.navbar.open .nav-list {
+    display: flex;
+}
+
+.nav-list a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    color: var(--text);
+    font-weight: 600;
+    padding: 10px 12px;
+    border-radius: 10px;
+}
+
+.nav-list a:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-list {
+        position: static;
+        display: flex !important;
+        flex-direction: row;
+        gap: 8px;
+        padding: 0;
+        background: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+
+    .nav-list a {
+        width: auto;
+    }
+}

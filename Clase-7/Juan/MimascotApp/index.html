@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MimascotApp</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <a href="#" class="logo" aria-label="Ir a la página de inicio">MimascotApp</a>
+
+        <nav class="navbar" aria-label="Navegación principal">
+            <a href="#" class="brand" aria-label="Inicio">MENÚ</a>
+
+            <button class="nav-toggle" aria-controls="primary-menu" aria-expanded="false" aria-label="Abrir menú" onclick="console.log('Click')">
+                <span class="sr-only">Abrir menú</span>
+
+                <!-- ícono hamburguesa  -->
+                <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+            </button> 
+
+            <ul id="primary-menu" class="nav-list">
+                <li><a href="#">Comprar</a></li>
+                <li><a href="#">Alquilar</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Inmobiliarias</a></li>
+                <li><a href="#">Ingresar</a></li>
+                <li><a href="#">Registrarte</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+
+
+    <main class="main">
+        <!-- HERO SECTION -->
+        <section class="hero" role="banner">
+            <div class="hero-content">
+                <h1 class="hero-title">MimascotApp</h1>
+                <p class="hero-subtitle">Encuentra a tu mejor amigo. Rápido y seguro.</p>
+                <a href="#acciones" class="hero-button">Comenzar</a>
+            </div>
+        </section>
+
+
+
+        <section id="acciones" class="actions-section container">
+            <h2>Acciones</h2>
+            <div class="card-grid">
+                <!-- Card 1 -->
+                <a href="#" class="card" aria-label="Reportar una mascota perdida">
+                    <span class="card-icon">🐾</span>
+                    <h3>Mascotas Perdidas</h3>
+                </a>
+                <!-- Card 2 -->
+                <a href="#" class="card" aria-label="Buscar mascotas encontradas">
+                    <span class="card-icon">🔍</span>
+                    <h3>Mascotas Encontradas</h3>
+                </a>
+            </div>
+        </section>
+    </main>
+
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#">Sobre nosotros</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
