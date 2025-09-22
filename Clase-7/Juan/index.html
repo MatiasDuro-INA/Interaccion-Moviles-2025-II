@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>INA — Casas</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#">
+      <span aria-hidden="true">🏡</span>
+      <strong>INA</strong>
+    </a>
+    <h1 class="page-title">Casas</h1>
+  </header>
+
+  <input id="filters-done" type="checkbox" hidden />
+
+  <main class="container">
+    <section class="filters-overlay" aria-labelledby="filtros-title" aria-modal="true" role="dialog">
+      
+      <!-- Desde ACA -->
+        <div class="filters-card">
+        <h2 id="filtros-title">Filtrar búsqueda</h2>
+
+
+        <form class="filters-form" action="#" method="get">
+          <div class="field">
+            <label for="amb">Ambientes</label>
+            <select id="amb" name="amb">
+              <option value="" selected>Todos</option>
+              <option>1 ambiente</option>
+              <option>2 ambientes</option>
+              <option>3 ambientes</option>
+              <option>4+ ambientes</option>
+            </select>
+          </div>
+
+          <div class="field field--two">
+            <div>
+              <label for="precio-desde">Precio desde</label>
+              <input id="precio-desde" name="precio_desde" type="number" inputmode="numeric" placeholder="Ej: 150000" />
+            </div>
+            <div>
+              <label for="precio-hasta">Precio hasta</label>
+              <input id="precio-hasta" name="precio_hasta" type="number" inputmode="numeric" placeholder="Ej: 350000" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="m2">Sup. mínima (m²)</label>
+            <input id="m2" name="m2_min" type="number" inputmode="numeric" placeholder="Ej: 45" />
+          </div>
+
+          <div class="actions">
+            <label class="btn btn--ghost" for="filters-done">Cancelar</label>
+            <label class="btn btn--primary" for="filters-done">Aplicar filtros</label>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Hasta aca -->
+
+    <section class="listado" aria-label="Resultados">
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Colegiales</h3>
+          <p>3 amb · 120 m² · Terraza</p>
+          <span class="price">$ 320.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa PH en Caballito</h3>
+          <p>2 amb · 85 m² · Patio</p>
+          <span class="price">$ 250.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Villa Urquiza</h3>
+          <p>4 amb · 160 m² · Garage</p>
+          <span class="price">$ 480.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Saavedra</h3>
+          <p>3 amb · 110 m² · Jardín</p>
+          <span class="price">$ 360.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Núñez</h3>
+          <p>2 amb · 90 m² · Balcón</p>
+          <span class="price">$ 290.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Parque Chas</h3>
+          <p>3 amb · 130 m² · Quincho</p>
+          <span class="price">$ 410.000 / mes</span>
+        </div>
+      </article>
+
+      <article class="prop-card">
+        <div class="thumb" aria-hidden="true"></div>
+        <div class="info">
+          <h3>Casa en Belgrano R</h3>
+          <p>5 amb · 220 m² · Piscina</p>
+          <span class="price">$ 780.000 / mes</span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
