@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="shortcut icon" href="./mza.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Atención Ciudadana</title>
+
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <img src="./mza.png" alt="Logo Mendoza" />
+    </a>
+
+    <!-- Botón hamburguesa -->
+    <button class="nav-toggle">☰</button>
+
+    <!-- Menú de navegación -->
+    <ul class="nav-list">
+      <li><a href="#">Atención Ciudadana</a></li>
+      <li><a href="#">Información Oficial</a></li>
+      <li><a href="#">Prensa</a></li>
+      <li><a href="#">Acceso a Webmail</a></li>
+    </ul>
+  </header>
+  <!-- HERO -->
+   
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Atención Ciudadana</h1>
+      <div class="search-box">
+        <input type="text" placeholder="¿Qué trámite necesitas?" />
+        <button class="btn">Búsqueda</button>
+      </div>
+    </div>
+  </section>
+  <!-- TRÁMITES -->
+  <main class="container">
+    <h2>Trámites más buscados</h2>
+    <i class="fa-solid fa-bars"></i>
+
+<!-- Ícono de búsqueda -->
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<!-- Íconos de redes sociales -->
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-youtube"></i>
+    <div class="menu-grid">
+      <a href="#" class="menu-card">
+        <span class="label">Registro Civil</span> <small>DNI</small>
+      </a>
+      <a href="#" class="menu-card">
+        <span class="label">Registro Civil</span>
+        <small>Acta de Nacimiento</small>
+      </a>
+      <a href="#" class="menu-card">
+        <span class="label">Registro Civil</span> <small>Pasaporte</small>
+      </a>
+      <a href="#" class="menu-card">
+        <span class="label">Autoservicio del Empleado Público</span>
+      </a>
+    </div>
+    <br />
+    <a href="#" class="btn">Ver más trámites</a>
+  </main>
+  <!-- CANALES -->
+  <section class="container">
+    <h2>Canales</h2>
+    <div class="menu-grid">
+      <a href="#" class="menu-card">
+        <span class="icon">🎧</span> <span class="label">Voz</span>
+      </a>
+      <a href="#" class="menu-card">
+        <span class="icon">💬</span> <span class="label">WhatsApp</span>
+      </a>
+    </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <img src="./mza.png" alt="Logo Mendoza" />
+    <nav class="footer-nav">
+      <a href="#">Atención Ciudadana</a> <a href="#">Información Oficial</a>
+      <a href="#">Prensa</a>
+    </nav>
+    <a href="#" class="btn">Acceso a Webmail</a>
+    <p>
+      <small>
+        Políticas de privacidad <br />
+        Términos y condiciones de uso
+      </small>
+    </p>
+    <div class="social">
+      <a href="#">Facebook</a> | <a href="#">Instagram</a> |
+      <a href="#">YouTube</a>
+    </div>
+  </footer>
+  <script>
+    // 1. Seleccionamos el botón hamburguesa
+    const toggleButton = document.querySelector(".nav-toggle");
+
+    // 2. Seleccionamos la lista del menú
+    const navList = document.querySelector(".nav-list");
+
+    // 3. Escuchamos el evento "click" en el botón
+    toggleButton.addEventListener("click", () => {
+      // Alternamos (toggle) la clase "open" en el menú
+      // Si la tiene, se quita; si no la tiene, se agrega
+      navList.classList.toggle("open");
+    });
+  </script>
+
+</body>
+
+</html>

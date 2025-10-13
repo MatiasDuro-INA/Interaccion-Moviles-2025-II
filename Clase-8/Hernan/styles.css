@@ -1,0 +1,148 @@
+/*..........ROOT.........*/
+:root {
+  --bg: #debc75;
+  --card: #ffffff;
+  --muted: #92ab45;
+  --accent: #59bc32;
+  --accent-700: #188f0b;
+  --accent-900: #dba81d;
+  --radius: 14px;
+  font-family: "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+/*........................*/
+* {
+  box-sizing: border-box;
+}
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* espacio entre logo y texto */
+}
+.logo {
+  height: 50px;
+}
+/*............BODY..........*/
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #3d8c44 60%);
+  color: #0f2a1a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+/*..........HEADER...........*/
+header.site-header {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--accent-700);
+}
+/*.........NAV..........*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+nav a {
+  text-decoration: none;
+  color: #02330e;
+  font-weight: 600;
+}
+nav a:hover {
+  color: var(--accent-900);
+}
+/*......MAIN...........*/
+main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+/*.........CARD............*/
+section.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid var(--accent-900);
+}
+section.card h2 {
+  margin-top: 0;
+  text-align: center;
+  color: var(--accent-700);
+}
+p {
+  line-height: 1.6;
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+/*....................... imagen con transparencia*/
+#sobre {
+  position: relative;
+  background: url("imagenes/imagen\ venta\ de\ garage.JPG") no-repeat
+    center/cover;
+}
+
+#sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85); /* casi blanco transparente */
+  border-radius: var(--radius);
+}
+
+#sobre * {
+  position: relative;
+  z-index: 1;
+}
+/*.............RECURSOS..................*/
+.resource {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+.resource h3 {
+  margin-top: 0;
+  color: var(--accent-700);
+}
+
+.resource-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+/*...........MEDIA Q...........*/
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+/*.........FOOTER............*/
+footer {
+  background: var(--accent-900);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+}
