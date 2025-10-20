@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>VDG - Venta de garage App</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="branding">
+      <a href="index.html"><img src="./imagenes/logoVDG.png" alt="Logo VDG" class="logo" /></a>
+      <h1>@VDG.cheap</h1>
+    </div>
+
+    <nav>
+      <ul>
+        <li>Seguinos en:</li>
+        <li><a href="https://facebook.com" target="_blank"><i class="bx bxl-facebook-circle"></i></a></li>
+        <li><a href="https://instagram.com" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+        <li><a href="https://wa.me/1160350674" target="_blank"><i class="bx bxl-whatsapp"></i></a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contacto-container">
+      <form action="https://formsubmit.co/herni.soporte@gmail.com" method="POST">
+        <label for="nombreYapellido">Nombre y Apellido:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="celular">Celular:</label>
+        <input type="tel" id="celular" name="celular" pattern="[0-9]{10}" placeholder="(11)00000000" required>
+
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="correo@gmail.com" required>
+
+        <label for="comentario">Comentario:</label>
+        <textarea id="comentario" name="comentario" placeholder="Hazme tu consulta..." required></textarea>
+
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>VDG.cheap &copy; 2025 Todos los derechos reservados</strong></p>
+  </footer>
+</body>
+</html>

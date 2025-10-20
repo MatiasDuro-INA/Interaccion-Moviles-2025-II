@@ -1,0 +1,278 @@
+/*..........ROOT.........*/
+:root {
+  --bg: #debc75;
+  --card: #ffffff;
+  --muted: #92ab45;
+  --accent: #59bc32;
+  --accent-700: #188f0b;
+  --accent-900: #dba81d;
+  --radius: 14px;
+  font-family: "Inter", "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    Arial, sans-serif;
+}
+
+/*........................*/
+* {
+  box-sizing: border-box;
+}
+
+.branding {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  /* espacio entre logo y texto */
+}
+
+.logo {
+  height: 50px;
+}
+
+/*............BODY..........*/
+body {
+  margin: 0;
+  background: linear-gradient(180deg, var(--bg), #3d8c44 60%);
+  color: #0f2a1a;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/*..........HEADER...........*/
+.site-header {
+  background: var(--card);
+  box-shadow: var(--shadow);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--accent-700);
+}
+
+/*.........NAV..........*/
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-mobile{
+  display: none;
+}
+
+a {
+  text-decoration: none;
+  /* quita el subrayado de todos los enlaces */
+}
+
+.back-link {
+  margin-bottom: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #02330e;
+  font-weight: 600;
+}
+
+nav a:hover {
+  color: var(--accent-900);
+}
+
+/*......MAIN...........*/
+main {
+  flex: 1;
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+button {
+  display: block;
+  margin: 20px auto 0 auto;
+  /* arriba 20px, centrado horizontal */
+  padding: 10px 20px;
+  background-color: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--accent-700);
+}
+
+/*.........CARD............*/
+section.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+  margin-bottom: 30px;
+  border: 2px solid var(--accent-900);
+
+  h5 {
+    text-align: end
+  }
+}
+
+section.card h2 {
+  margin-top: 0;
+  text-align: center;
+  color: var(--accent-700);
+}
+
+p {
+  line-height: 1.6;
+}
+
+.productos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  /* tres columnas */
+  gap: 20px;
+  /* espacio entre columnas y filas */
+}
+
+aside {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*....................... imagen con transparencia*/
+#sobre {
+  position: relative;
+  background: url("imagenes/imagen\ venta\ de\ garage.JPG") no-repeat center/cover;
+}
+
+#sobre::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
+  /* casi blanco transparente */
+  border-radius: var(--radius);
+}
+
+#sobre * {
+  position: relative;
+  z-index: 1;
+}
+
+/*.............RECURSOS..................*/
+.resource {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 20px;
+}
+
+.resource h3 {
+  margin-top: 0;
+  color: var(--accent-700);
+}
+
+.resource-img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  display: block;
+}
+
+/*...........MEDIA Q...........*/
+/* tablet */
+@media (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* dos columnas */
+    gap: 20px;
+    /* espacio entre columnas y filas */
+  }
+
+  header h1{
+    font-size: 1.4rem;
+  }
+
+  .site-header{
+    padding: 5px;
+  }
+
+  .nav-desktop{
+    display: none;
+  }
+
+  .nav-mobile{
+    display: block;
+  }
+
+  .productos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    /* dos columnas */
+    gap: 20px;
+    /* espacio entre columnas y filas */
+  }
+}
+
+/* estilo del formulario */
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  color: rgb(253, 253, 250)
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #f8f6f6;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+textarea {
+  height: 100px;
+  width: 397px;
+}
+
+input[type="submit"] {
+  background-color: #4cda2187;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #0a5a07a2;
+  color: rgb(255, 254, 254);
+}
+
+/*.........FOOTER............*/
+footer {
+  background: var(--accent-900);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+  display: flex;
+}

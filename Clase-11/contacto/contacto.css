@@ -1,0 +1,128 @@
+:root {
+    --bg: #debc75;
+    --card: #ffffff;
+    --accent: #59bc32;
+    --accent-700: #188f0b;
+    --accent-900: #dba81d;
+    font-family: "Inter", "Poppins", sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background: linear-gradient(180deg, var(--bg), #3d8c44 60%);
+    color: #0f2a1a;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  /* HEADER */
+  .site-header {
+    background: var(--card);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* ✅ permite que se acomode en pantallas chicas */
+  }
+  
+  .branding {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  /* NAV */
+  nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap; /* ✅ que los íconos bajen si no hay espacio */
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #02330e;
+    font-weight: 600;
+  }
+  
+  nav a:hover {
+    color: var(--accent-900);
+  }
+  
+  /* MAIN */
+  main {
+    flex: 1;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* ✅ grid flexible */
+    gap: 40px;
+  }
+  
+  /* FORMULARIO */
+  form {
+    max-width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+  }
+  
+  input, textarea {
+    width: 100%; /* ✅ nada fijo */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+  }
+  
+  textarea {
+    height: 100px;
+    resize: vertical;
+  }
+  
+  input[type="submit"] {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: var(--accent-700);
+  }
+  
+  /* FOOTER */
+  footer {
+    background: var(--accent-900);
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  /* MEDIA QUERIES */
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.2rem;
+    }
+  
+    .site-header {
+      flex-direction: column;
+      align-items: flex-start;
+      text-align: center;
+    }
+  }
+  
