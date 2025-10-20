@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <title>TORNEO APP </title>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <img class="logo_img" src="./assets/logo.png">
+
+            <ul>
+                <div class="menu-toggle">&#9776;</div>
+                <!-- <li> Ingresar </li>
+                <li> Torneos</li>
+                <li> Inscripcion </li> -->
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="hero_section">
+            <div class="container_abs">
+                <video autoplay muted loop playsinline class="video_d" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+                    <source src="./assets/video.mp4" type="video/mp4" media="(min-width: 769px)">
+                </video>
+                <video autoplay muted loop playsinline style="width: 100%; height: 100dvh; object-fit: cover;"
+                    class="video_m">
+                    <source src="./assets/video_mobile.mp4" type="video/mp4" media="(max-width: 768px)">
+                </video>
+                <!-- <img src="./assets/hero_img.jpg" class="img_hero" /> -->
+                <h1 class="main_title">Torneo App</h1>
+                <!-- <p class="main_text">Este es el hero</p> -->
+                <a href="./torneos.html"><button class="cta_main">Inscribirme</button></a>
+            </div>
+
+
+        </div>
+        <div class="cards_section">
+            <h2 class="titles"> Deportes </h2>
+            <div class="grid_container">
+                <div class="relat">
+                    <img src="./assets/prueba.png" />
+                    <!-- <span class="tempo pp">Ping Pong</span> -->
+                </div>
+                <div class="relat">
+                    <img src="./assets/tenis_torneoapp.png" />
+                    <!-- <span class="tempo te">Tenis</span> -->
+                </div>
+                <div class="relat">
+                    <img src="./assets/padel_torneoapp.png" />
+                    <!-- <span class="tempo pa">Padel</span> -->
+                </div>
+                <div class="relat">
+                    <img src="./assets/otros_torneoapp.png" />
+                    <!-- <span class="tempo ot">Otros</span> -->
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+    <footer class="footer">
+        <ul class="items">
+            
+            <li>Nosotros</li>
+            <a href="./torneos.html"><li>Fechas torneos sede Trelew</li></a>
+            
+            <li> Horarios </li>
+        </ul>
+        <div class="social">
+            <ul class="redes">
+                <!-- no funcionan iconos, ver -->
+                <li><i class="fa-brands fa-instagram"></i></li>
+                <li><i class="fa-brands fa-facebook"></i></li>
+                <li><i class="fa-brands fa-linkedin-in"></i></li>
+
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

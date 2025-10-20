@@ -1,0 +1,174 @@
+* {
+    padding: 0;
+    margin: 0;
+
+
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+  }
+
+.logo_img {
+    width: 15%;
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+}
+
+.menu-toggle {
+    padding: 2em;
+    color: white;
+}
+
+.img_hero {
+    width: 100%;
+}
+
+.hero_section {
+    position: relative;
+}
+
+.main_title {
+    position: absolute;
+    top: 35%;
+    color: white;
+    font-family: "Anton SC", sans-serif;
+    margin: auto 1rem;
+    font-size: 45px;
+}
+
+.main_text {
+    position: absolute;
+    top: 50%;
+    color: wheat;
+
+}
+
+.cta_main {
+    position: absolute;
+    top: 50%;
+    right: 55%;
+    background-color: transparent;
+    padding: 1.5em;
+    font-family: "Public Sans", sans-serif;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: 900;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 16px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+    padding: 2%;
+    font-size: 16px;
+    font-family: "Public Sans", sans-serif;
+}
+
+.titles {
+    font-family: "Anton", sans-serif;
+    text-align: center;
+    font-size: 28px;
+}
+
+.tempo {
+    background-color: transparent;
+    padding: 1em;
+    color: black;
+    font-family: "Anton SC", sans-serif;
+    font-weight: 800;
+    font-size: 24px;
+
+}
+
+.pp {
+    position: absolute;
+    top: 80%;
+    right: 50%;
+}
+
+.te {
+    position: absolute;
+    top: 80%;
+    right: 50%;
+}
+
+.pa,
+.ot {
+    position: absolute;
+    top: 80%;
+    right: 50%;
+}
+
+.video_d {
+    display: none;
+}
+
+.footer {
+    background-color: black;
+    color: #bca7e7;
+}
+
+.items {
+    text-decoration: none;
+    padding: 2rem 1em;
+    list-style: none;
+    margin: 1em auto;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #bca7e7;
+}
+
+img {
+    width: 95%;
+    /* border-radius: 100%; */
+    object-fit: cover;
+}
+
+li {
+    margin-top: 1em;
+}
+
+.redes {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: white;
+}
+
+.relat {
+    position: relative;
+}
+
+.cards_section {
+    margin-top: 3em;
+}
+.btn_vermas{
+    background-color: transparent;
+    border: 1px solid #bca7e7; 
+    padding: 1em;
+}
+
+@media (min-width: 768px) { 
+
+    .grid_container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
