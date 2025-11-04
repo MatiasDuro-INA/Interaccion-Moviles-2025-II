@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <title>VDG - Carrito de Compras</title>
+
+  <link rel="stylesheet" href="../Estilos/styles.css" />
+  <link rel="stylesheet" href="../carrito/carrito.css" />
+</head>
+<body>
+<header class="site-header">
+  <div class="branding">
+    <a href="../Inicio/index.html"><img src="../imagenes/logoVDG.png" alt="Logo VDG" class="logo" /></a>
+    <h1>VDG.cheap</h1>
+  </div>
+
+  <!-- 🔹 Botón hamburguesa -->
+  <button class="menu-toggle" aria-label="Abrir menú">
+    <i class="bx bx-menu"></i>
+  </button>
+
+  <!-- 🔹 Menú de navegación -->
+  <nav class="menu">
+    <a href="../Inicio/index.html"><i class="bx bx-home"></i>Inicio</a>
+    <a href="../productos/productos.html"><i class="bx bx-shopping-bag"></i>Productos</a>
+    <a href="../carrito/carrito.html" class="cart-link">
+      <i class="bx bx-cart"></i><span id="cart-count">0</span> Ver Carrito
+    </a>
+    <a href="../contacto/contacto.html"><i class="bx bx-mail-send"></i>Formulario</a>
+  </nav>
+</header>
+
+
+<main class="cart-container">
+  <h2><i class="bx bx-cart"></i> Carrito de Compras</h2>
+
+  <section class="cart-items" id="cart-items">
+    <!-- Los productos se insertan automáticamente -->
+  </section>
+
+  <section class="cart-summary">
+    <h3>Resumen</h3>
+    <p>Total: <span id="cart-total">$0</span></p>
+    <button id="checkout-btn">Finalizar Compra</button>
+  </section>
+</main>
+
+
+
+
+  <footer>
+    <p><strong>VDG.cheap &copy; 2025 Todos los derechos reservados</strong></p>
+    <ul>
+      <li>Seguinos en:</li>
+      <li><a href="https://www.facebook.com/ventadegarage.cheap" target="_blank"><i class="bx bxl-facebook-circle"></i></a></li>
+      <li><a href="https://www.instagram.com/ventadegarage.cheap/" target="_blank"><i class="bx bxl-instagram"></i></a></li>
+      <li><a href="https://wa.me/1160350674" target="_blank"><i class="bx bxl-whatsapp"></i></a></li>
+    </ul>
+  </footer>
+<!--....................................SCRIPT.......................-->
+  <script>
+    // JS simple para eliminar items del carrito
+    document.querySelectorAll('.remove-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.target.closest('.cart-item').remove();
+      });
+    });
+  </script>
+ <script>
+  const cartContainer = document.getElementById("cart-items");
+  const totalSpan = document.getElementById("cart-total");
+
+  function renderCart() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    cartContainer.innerHTML = "";
+
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+      const itemDiv = document.createElement("div");
+      itemDiv.classList.add("cart-item");
+
+      itemDiv.innerHTML = `
+        <img src="${item.img}" alt="${item.name}">
+        <div class="item-info">
+          <h3>${item.name}</h3>
+          <p>Precio unitario: $${item.price.toLocaleString()}</p>
+          <span>Total: $${(item.price * item.quantity).toLocaleString()}</span>
+        </div>
+        <div class="item-actions">
+          <input type="number" min="1" value="${item.quantity}" data-index="${index}" class="quantity">
+          <button class="remove-btn" data-index="${index}"><i class="bx bx-trash"></i></button>
+        </div>
+      `;
+
+      cartContainer.appendChild(itemDiv);
+      total += item.price * item.quantity;
+    });
+
+    totalSpan.textContent = "$" + total.toLocaleString();
+
+    // Botones eliminar
+    document.querySelectorAll(".remove-btn").forEach(btn => {
+      btn.addEventListener("click", e => {
+        const index = e.currentTarget.dataset.index;
+        carrito.splice(index, 1);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderCart();
+        actualizarContadorCarrito();
+      });
+    });
+
+    // Cambiar cantidad
+    document.querySelectorAll(".quantity").forEach(input => {
+      input.addEventListener("change", e => {
+        const index = e.currentTarget.dataset.index;
+        carrito[index].quantity = parseInt(e.target.value);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        renderCart();
+        actualizarContadorCarrito();
+      });
+    });
+  }
+
+  // 🔹 Finalizar compra con total correcto
+  document.getElementById("checkout-btn").addEventListener("click", () => {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    if (carrito.length === 0) {
+      alert("Tu carrito está vacío 🛒");
+      return;
+    }
+
+    const total = carrito.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    alert(`✅ ¡Compra finalizada!\nTotal: $${total.toLocaleString()}\nGracias por tu compra 🛍️`);
+
+    localStorage.removeItem("carrito");
+    renderCart();
+    actualizarContadorCarrito();
+  });
+
+  // 🔹 Contador global del carrito
+  function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const totalItems = carrito.reduce((acc, item) => acc + item.quantity, 0);
+    const contador = document.getElementById("cart-count");
+    if (contador) contador.textContent = totalItems;
+  }
+
+  renderCart();
+  actualizarContadorCarrito();
+</script>
+<!--...............................................................................................................-->
+<!--script del menu hamb-->
+<script>
+  // 🔹 Alternar menú hamburguesa
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+
+      // Cambiar ícono (menu ↔ X)
+      const icon = toggle.querySelector("i");
+      if (menu.classList.contains("active")) {
+        icon.classList.replace("bx-menu", "bx-x");
+      } else {
+        icon.classList.replace("bx-x", "bx-menu");
+      }
+    });
+  }
+</script>
+</body>
+</html>

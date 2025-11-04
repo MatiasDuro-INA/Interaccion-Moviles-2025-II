@@ -1,0 +1,359 @@
+:root {
+  --violeta: #CDD7EE;
+  --violeta-claro: linear-gradient(to bottom, #D4E9F7, #602AA6);;
+  --lavanda: #251040;
+  --blanco: #251040;
+  --radius: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: var(--violeta);
+  color: var(--blanco);
+}
+
+/* ------------------- Intro ------------------- */
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(135deg, var(--violeta), var(--violeta-claro));
+}
+
+.intro-container {
+  text-align: center;
+}
+
+.intro h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.intro p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.intro img.onboard-img {
+  width: 150px;
+  border-radius: var(--radius);
+}
+
+/* ------------------- Onboarding ------------------- */
+.onboarding {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: var(--violeta);
+}
+
+.onboarding-content {
+  text-align: center;
+  max-width: 350px;
+  padding: 20px;
+  background: var(--violeta-claro);
+  border-radius: var(--radius);
+}
+
+.onboarding-content h1 {
+  margin-bottom: 10px;
+}
+
+.onboard-img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin: 15px 0;
+}
+
+/* ------------------- Botones ------------------- */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn--primary {
+  background: var(--lavanda);
+  color: var(--violeta);
+}
+
+.btn--primary:hover {
+  opacity: 0.9;
+}
+
+.btn--ghost {
+  border: 2px solid var(--lavanda);
+  color: var(--lavanda);
+}
+
+.btn--ghost:hover {
+  background: var(--lavanda);
+  color: var(--violeta);
+}
+
+/* ------------------- Home ------------------- */
+.app-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--violeta);
+}
+
+.app-header {
+  background: var(--violeta-claro);
+  text-align: center;
+  padding: 16px;
+  font-size: 1.5rem;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 16px;
+  flex-grow: 1;
+}
+
+.home-card {
+  background: var(--violeta-claro);
+  border-radius: var(--radius);
+  padding: 10px;
+  text-align: center;
+  color: var(--blanco);
+  transition: transform 0.2s;
+}
+
+.home-card:hover {
+  transform: translateY(-5px);
+}
+
+.home-card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 8px;
+}
+
+.home-card h3 {
+  margin-bottom: 5px;
+}
+
+/* ------------------- Footer Nav ------------------- */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: var(--violeta-claro);
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.bottom-nav a {
+  color: var(--blanco);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bottom-nav a.active {
+  font-weight: bold;
+  color: var(--lavanda);
+}
+
+/* ------------------- Adoptar / Dar en adopcion ------------------- */
+.mascotas_en_adopcion, .dar_mascotas {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.adoptar, .en_adopcion {
+  background: var(--violeta-claro);
+  padding: 20px;
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.adoptar img.en_adopcion, .en_adopcion img.en_adopcion {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 10px;
+}
+
+/* ------------------- Chat ------------------- */
+.chat-screen {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.chat-header {
+  background: var(--violeta-claro);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chat-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.chat-body {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.msg {
+  max-width: 70%;
+  padding: 10px;
+  border-radius: var(--radius);
+  line-height: 1.4;
+}
+
+.msg.received {
+  background: var(--violeta-claro);
+  align-self: flex-start;
+}
+
+.msg.sent {
+  background: var(--lavanda);
+  color: var(--violeta);
+  align-self: flex-end;
+}
+
+.chat-input {
+  display: flex;
+  padding: 10px;
+  background: var(--violeta-claro);
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  border-radius: var(--radius);
+  padding: 10px;
+}
+
+.chat-input .btn-send {
+  background: var(--lavanda);
+  border: none;
+  border-radius: var(--radius);
+  margin-left: 10px;
+  cursor: pointer;
+}
+/* Fondo principal */
+.app-body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(to bottom, #602AA6, #D4E9F7);
+  color: white;
+}
+
+/* Header */
+.app-header {
+  background: transparent;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* Cards tipo app */
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.home-card {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  width: 90%;
+  max-width: 350px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, background 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.home-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.home-card img {
+  width: 60px;
+  margin-bottom: 10px;
+}
+
+.home-card h3 {
+  margin: 5px 0;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* Botones secundarios dentro de las cards */
+.btn--secundary {
+  display: inline-block;
+  margin-top: 8px;
+  background: #D4E9F7;
+  color: #602AA6;
+  padding: 8px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+/* Nav inferior */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+  backdrop-filter: blur(5px);
+}
+
+.bottom-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bottom-nav a.active {
+  color: #D4E9F7;
+  font-weight: 600;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .home-card {
+    width: 85%;
+  }
+
+  .home-card img {
+    width: 50px;
+  }
+}

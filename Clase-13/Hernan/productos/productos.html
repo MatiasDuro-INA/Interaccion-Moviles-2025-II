@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <title>VDG - Venta de garage App</title>
+  <meta name="description" content="Sitio de compra y venta de articulos nuevos y usados en buen estado" />
+  <link rel="stylesheet" href="../Estilos/styles.css" />
+  <link rel="stylesheet" href="../productos/productos.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-header">
+
+      <div class="branding">
+        <a href="../Inicio/index.html"><img src="../imagenes/logoVDG.png" alt="Logo VDG" class="logo" /></a>
+        <h1>VDG.cheap</h1>
+      </div>
+
+      <!-- 🔹 Botón hamburguesa -->
+       <div class="button-nav">
+         <button class="menu-toggle" aria-label="Abrir menú">
+           <i class="bx bx-menu"></i>
+         </button>
+       </div>
+    </div>
+
+    <!-- 🔹 Menú de navegación -->
+    <nav class="menu">
+      <a href="../Inicio/index.html"><i class="bx bx-home"></i>Inicio</a>
+      <a href="../productos/productos.html"><i class="bx bx-shopping-bag"></i>Productos</a>
+      <a href="../carrito/carrito.html" class="cart-link">
+        <i class="bx bx-cart"></i><span id="cart-count">0</span> Ver Carrito
+      </a>
+      <a href="../contacto/contacto.html"><i class="bx bx-mail-send"></i>Formulario</a>
+    </nav>
+  </header>
+
+
+  <main class="container">
+    <section class="productos">
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+
+      <section class="card">
+        <article class="prop-card">
+          <img src="../imagenes/antiques.jpg" />
+          <div class="info">
+            <h3>Producto 1</h3>
+            <p>usado en buen estado</p>
+            <span class="price">$ 320.000</span>
+            <button class="add-to-cart" data-name="Producto 1" data-price="320000" data-img="../imagenes/antiques.jpg">
+              Agregar al carrito
+            </button>
+          </div>
+        </article>
+      </section>
+  </main>
+
+  <footer>
+    <p>
+      <strong>VDG.cheap &copy; 2025 Todos los derechos reservados</strong>
+    </p>
+    <ul>
+      <li>Seguinos en:</li>
+      <li>
+        <a href="https://www.facebook.com/ventadegarage.cheap" target="_blank"><i
+            class="bx bxl-facebook-circle"></i></a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/ventadegarage.cheap/" target="_blank"><i class="bx bxl-instagram"></i></a>
+      </li>
+      <li>
+        <a href="https://wa.me/1160350674" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+      </li>
+    </ul>
+  </footer>
+  <!--funcionalidad del carrito-->
+  <script>
+    // Script para agregar al carrito
+    const botones = document.querySelectorAll(".add-to-cart");
+
+    botones.forEach(boton => {
+      boton.addEventListener("click", () => {
+        const name = boton.dataset.name;
+        const price = parseFloat(boton.dataset.price);
+        const img = boton.dataset.img;
+
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        // Ver si el producto ya está en el carrito
+        const existente = carrito.find(item => item.name === name);
+        if (existente) {
+          existente.quantity++;
+        } else {
+          carrito.push({ name, price, img, quantity: 1 });
+        }
+
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        alert("Producto agregado al carrito 🛒");
+      });
+    });
+  </script>
+  <script>
+    // Actualiza el contador del carrito
+    function actualizarContadorCarrito() {
+      const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+      const totalItems = carrito.reduce((acc, item) => acc + item.quantity, 0);
+      const contador = document.getElementById("cart-count");
+      if (contador) contador.textContent = totalItems;
+    }
+
+    actualizarContadorCarrito();
+
+
+    // Escucha cambios desde otras páginas
+    window.addEventListener("storage", actualizarContadorCarrito);
+  </script>
+  <!--script del menu hamb-->
+  <script>
+    // 🔹 Alternar menú hamburguesa
+    const toggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
+
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("active");
+
+        // Cambiar ícono (menu ↔ X)
+        const icon = toggle.querySelector("i");
+        if (menu.classList.contains("active")) {
+          icon.classList.replace("bx-menu", "bx-x");
+        } else {
+          icon.classList.replace("bx-x", "bx-menu");
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <section class="listado">
+        <h1>Listado de Productos</h1>
+        <ul id="lista">
+            <li>
+                <h2>Vela Aromática</h2>
+                <p>Hecha a mano con cera de soja y aceites naturales.</p>
+            </li>
+        </ul>
+    </section>
+
+    <script>
+
+        const productos = [
+            {
+                nombre: "Vela Aromática",
+                detalle: "Hecha a mano con cera de soja y aceites naturales.",
+            },
+            {
+                nombre: "Jabón Natural",
+                detalle: "Suave para la piel, con aroma a lavanda.",
+            },
+            {
+                nombre: "Difusor Ambiental",
+                detalle: "Fragancia duradera con varillas de bambú.",
+            },
+        ]
+
+        const lista = document.getElementById("lista")
+
+        productos.map(producto => {
+            lista.innerHTML += `
+                <li>
+                    <h2>${producto.nombre}</h2>
+                    <p>${producto.detalle}</p>
+                </li>
+                `
+        })
+
+
+    </script>
+</body>
+
+</html>

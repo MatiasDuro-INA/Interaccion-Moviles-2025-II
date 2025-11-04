@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styleform.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>Inscribite</title>
+</head>
+
+<body>
+    <div class="contenedor_general">
+        <div class="btn_volver">
+            <a href="./index.html"> <button class="volver"> volver </button> </a>
+
+        </div>
+        <section>
+            <h2 class="title_form"> Formulario de Inscripción</h2>
+            <form id="form" class="formulario">
+                <label>Nombre</label> <br>
+                <input id="nombre" type="text" /> <br>
+                <label>Edad</label> <br>
+                <input id="edad" type="number" /> <br>
+                <label>Email</label> <br>
+                <input id="email" type="email" /> <br>
+                <label>Torneo</label> <br>
+                <select id="torneo">
+                    <option value="">Seleccione el torneo al que desea inscribirse</option>
+                    <option value="sabado7">Sabado 7/12</option>
+                    <option value="domingo8">Domingo 8/12</option>
+                    <option value="lunes9">Lunes 9/12</option>
+                    <option value="sabado15">Sabado 15/12</option>
+                    <option value="domingo16">Domingo 16/12</option>
+                </select><br>
+                <label>Anotaciones</label> <br>
+                <textarea></textarea><br>
+                <button id="abrir" type="submit">Enviar</button>
+            </form>
+        </section>
+        <div class="contenedor_popup" id="contenedor_modal">
+            <section class="modal" id="modal">
+                <h2> Estas inscripto </h2>
+                <button id="cerrar">Cerrar</button>
+            </section>
+        </div>
+
+    </div>
+    <script src="./torneopopup.js"></script>
+</body>
+
+</html>

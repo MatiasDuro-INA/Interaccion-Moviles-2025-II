@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel sin js</title>
+    <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            background-color: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        /* input[type="radio"]{
+
+        } */
+
+        .inputRadio {
+            display: none;
+        }
+
+        .carousel {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 60%;
+        }
+
+        .slides {
+            display: flex;
+            width: 300%;
+            transition: transform 0.6s ease;
+        }
+
+        .slide {
+            width: 100%;
+            flex-shrink: 0;
+        }
+
+        .slide img {
+            width: 100%;
+            display: block;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 30px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 10px 15px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+            user-select: none;
+        }
+
+        .arrow:hover {
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .left {
+            left: 15px;
+
+        }
+
+        .right {
+            right: 15px;
+        }
+
+        .dots {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff4;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .dot.active {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="carousel">
+
+        <div class="slides">
+            <div class="slide"><img src="https://picsum.photos/id/1015/800/400" alt="Imagen 1"></div>
+            <div class="slide"><img src="https://picsum.photos/id/1025/800/400" alt="Imagen 2"></div>
+            <div class="slide"><img src="https://picsum.photos/id/1035/800/400" alt="Imagen 3"></div>
+        </div>
+
+        <div class="arrow left">&#10094;</div>
+        <div class="arrow right">&#10095;</div>
+
+        <div class="dots">
+            <div class="dot active" data-index="0"></div>
+            <div class="dot" data-index="1"></div>
+            <div class="dot" data-index="2"></div>
+        </div>
+
+
+    </div>
+    <script>
+        // hay 3 formas de declarar una variable
+        // const, let, var 
+        // var casi no se usa, es viejisimo
+        // let se puede renombrar
+        // const (constante) no se puede renombrar
+
+
+        // const o let declara la variable, los datos o valores se almacenan en variables
+        // slides es el nombre de la variable
+        // document hace referencia al documento html
+        // querySelector llama al id o clase que le pasemos
+        const slides = document.querySelector(".slides")
+        const slideElements = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        const prev = document.querySelector(".arrow.left");
+        const next = document.querySelector(".arrow.right");
+
+        let index = 0
+
+        function showSlide(i) {
+            if (i < 0) index = slideElements.length - 1;
+            else if (i >= slideElements.length) index = 0;
+            else index = i;
+
+            slides.style.transform = `translateX(-${index * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            dots[index].classList.add("active");
+        }
+
+        prev.addEventListener("click", () => showSlide(index - 1));
+        next.addEventListener("click", () => showSlide(index + 1));
+
+
+        dots.forEach(dot => {
+            dot.addEventListener("click", (e) => {
+                const i = parseInt(e.target.dataset.index);
+                showSlide(i);
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>

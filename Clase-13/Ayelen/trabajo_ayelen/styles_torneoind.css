@@ -1,0 +1,55 @@
+.container_torneos {
+    /* background-image: url('./assets/padel_torneoapp.png'); */
+
+    font-family: "Public Sans", sans-serif;
+    height: 90vh;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+}
+
+.subtitle_torneoind {
+    text-align: center;
+    color: #bca7e7;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 900;
+}
+
+.contenedor1 {
+    display: flex;
+}
+
+.box1 {
+    padding: 3rem 1em 3rem 2rem;
+    background-color: transparent;
+    color: white;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+}
+
+.contenedor2 {
+    display: flex;
+}
+
+.box2 {
+    padding: 3rem 1em 3rem 2rem;
+    width: 90%;
+    background-color: transparent;
+    color: white;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+}
+
+.btn_individual {
+    padding: 1rem 3rem;
+    background-color: transparent;
+    border: 1px solid #bca7e7;
+    color: #bca7e7;
+    font-family: "Public Sans", sans-serif;
+    font-weight: 700;
+   display: block;
+  margin: 0 auto;
+}

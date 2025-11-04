@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "sedeTorneo": "Club Los Andes",
+    "fechaTorneo": "2025-11-12",
+    "horarioTorneo": "15:00",
+    "valorTorneo": 3500,
+    "vacanteTorneo": true
+  },
+  {
+    "id": 2,
+    "sedeTorneo": "Polideportivo Central",
+    "fechaTorneo": "2025-11-19",
+    "horarioTorneo": "18:30",
+    "valorTorneo": 4000,
+    "vacanteTorneo": false
+  },
+  {
+    "id": 3,
+    "sedeTorneo": "Club Atlético Sur",
+    "fechaTorneo": "2025-12-02",
+    "horarioTorneo": "10:00",
+    "valorTorneo": 3000,
+    "vacanteTorneo": true
+  },
+  {
+    "id": 4,
+    "sedeTorneo": "Estadio Municipal",
+    "fechaTorneo": "2025-12-10",
+    "horarioTorneo": "09:30",
+    "valorTorneo": 4200,
+    "vacanteTorneo": true
+  },
+  {
+    "id": 5,
+    "sedeTorneo": "Complejo El Norte",
+    "fechaTorneo": "2026-01-05",
+    "horarioTorneo": "17:00",
+    "valorTorneo": 3800,
+    "vacanteTorneo": false
+  },
+  {
+    "id": 6,
+    "sedeTorneo": "Club Deportivo Oeste",
+    "fechaTorneo": "2026-01-20",
+    "horarioTorneo": "14:00",
+    "valorTorneo": 3600,
+    "vacanteTorneo": true
+  }
+]

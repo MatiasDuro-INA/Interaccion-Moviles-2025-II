@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <title>VDG - Venta de garage App</title>
+    <meta
+        name="description"
+        content="Sitio de compra y venta de articulos nuevos y usados en buen estado"
+    />
+    <link rel="stylesheet" href="../Estilos/styles.css"/>
+    <link rel="stylesheet" href="../Inicio/inicio.css">
+    
+</head>
+    <body>
+<header class="clase-header">
+  <div class="branding">
+    <a href="../Inicio/index.html"><img src="../imagenes/logoVDG.png" alt="Logo VDG" class="logo" /></a>
+    <h1>VDG.cheap</h1>
+  </div>
+
+  <!--  Botón hamburguesa -->
+    <div>
+
+      <button class="menu-toggle" aria-label="Abrir menú">
+        <i class="bx bx-menu"></i>
+      </button>
+      
+    </div>
+  <!--  Menú de navegación -->
+  <nav class="menu">
+    <a href="../Inicio/index.html"><i class="bx bx-home"></i>Inicio</a>
+    <a href="../productos/productos.html"><i class="bx bx-shopping-bag"></i>Productos</a>
+    <a href="../carrito/carrito.html" class="cart-link">
+      <i class="bx bx-cart"></i><span id="cart-count">0</span> Ver Carrito
+    </a>
+    <a href="../contacto/contacto.html"><i class="bx bx-mail-send"></i>Formulario</a>
+  </nav>
+</header>
+
+
+<main>
+    <div>
+        <section class="card">
+            <h2>Sobre nosotros</h2>
+            <p>
+                Venta de Garage app busca poder llegar a más personas que quieran
+                vender o comprar articulos nuevos o usados en buen estado. <strong>¿NO TENÉS TIEMPO?</strong> nosotros publicamos y publicitamos tu articulo hasta su venta. Contamos con varios canales de venta, grupos de WhatsApp, marketplace y clasificados.
+            </p>
+        </section>
+        
+        <section class="card">
+            <h2>Productos y Articulos</h2>
+            <p>
+                Los productos y/o articulos para la venta deberán estar nuevos o
+                usados en buen estado de conservación,
+                <strong>No sucios o rotos.</strong> Se entiende que los articulos
+                antiguos tengan desgastes propios del uso y el paso de los años.
+            </p>
+            <a href="../productos/productos.html"><button>Ver productos</button></a>
+        </section>
+        
+        <section class="card">
+            <h2>Contactanos</h2>
+            <p>
+                ¿Tenés cosas para vender?
+                Completá el formulario o Escribinos a
+                <a href="mail de contacto">vdg.cheap@outlook.com.ar</a> dejanos tu
+                consulta y te responderemos a la brevedad. <strong>IMPORTANTE!!!</strong> No olvides decirnos:
+                <ul> <li>📍 Donde se encuentra el artículo.</li>
+                    <li>🆕 / 🔄 Estado (nuevo o usado).</li>
+                    <li>📏 Medidas (ancho, largo y alto).</li>
+                    <li>🚚 / 🤝 Si realiza entrega a domicilio y/o punto de encuentro.</li>
+                    <li>🛠️ Detalles adicionales (desgastes).</li>
+                </ul> 
+            </p>
+            
+            <a href="../contacto/contacto.html"><h5>👉​Enlace al Formulario</h5></a>
+        </section>
+    </div>
+    
+    <aside>
+        <div class="resource">
+            <h3><strong>¿A cuanto vender?</strong></h3>
+            <p>
+                El precio de venta lo estipulamos en base al estado del mismo,
+                comparando con <strong> articulos o productos similares</strong>
+                Aceptamos efectivo, transferencia o mercado pago.
+            </p>
+        </div>
+        <div class="resource">
+            <img
+            src="../imagenes/folletovdg.png"
+            alt="folletovdg"
+            class="resource-img"/>
+        </div>
+    </aside>
+</main>
+
+<footer>
+    <p>
+        <strong>VDG.cheap &copy; 2025 Todos los derechos reservados</strong>
+    </p>
+    <ul>
+        <li>Seguinos en:</li>
+        <li><a href="https://www.facebook.com/ventadegarage.cheap" target="_blank"><i class="bx bxl-facebook-circle"></i></a></li>
+        <li><a href="https://www.instagram.com/ventadegarage.cheap/"target="_blank"><i class="bx bxl-instagram"></i></a></li>
+        <li><a href="https://wa.me/1160350674" target="_blank"><i class="bx bxl-whatsapp"></i></a></li>
+    </ul>
+
+    </footer>
+    <script>
+  // Actualiza el contador del carrito
+  function actualizarContadorCarrito() {
+    const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+    const totalItems = carrito.reduce((acc, item) => acc + item.quantity, 0);
+    const contador = document.getElementById("cart-count");
+    if (contador) contador.textContent = totalItems;
+  }
+
+  actualizarContadorCarrito();
+
+  // Escucha cambios desde otras páginas
+  window.addEventListener("storage", actualizarContadorCarrito);
+</script>
+<!--script del menu hamb-->
+<script>
+  // 🔹 Alternar menú hamburguesa
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector(".menu");
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      menu.classList.toggle("active");
+
+      // Cambiar ícono (menu ↔ X)
+      const icon = toggle.querySelector("i");
+      if (menu.classList.contains("active")) {
+        icon.classList.replace("bx-menu", "bx-x");
+      } else {
+        icon.classList.replace("bx-x", "bx-menu");
+      }
+    });
+  }
+</script>
+
+
+    </body>
+</html>

@@ -1,0 +1,66 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.titles {
+    font-family: "Anton", sans-serif;
+    text-align: center;
+    font-size: 28px;
+}
+
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+    font-family: "Public Sans", sans-serif;
+    text-align: center;
+}
+
+.torneos {
+    background-color: black;
+    padding: 1rem;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+.torneos h3 {
+    font-family: "Anton SC", sans-serif;
+    color: white;
+    letter-spacing: 0.8px;
+}
+.torneos button{
+    background-color: transparent;
+    padding: .5em;
+    font-family: "Public Sans", sans-serif;
+    border: 1px solid white;
+    border-radius: 5px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    margin-top: 20px;
+}
+.torneos p{
+    color: #e3deec;
+}
+
+.btn_volver {
+    width: 100%;
+    margin-bottom: 1rem;
+    align-items: center;
+    background-color: black;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+}
+
+.volver {
+    padding: .5em 2rem;
+    font-weight: 800;
+    background-color: white;
+    border: none;
+    border-radius: 5px;
+
+}
